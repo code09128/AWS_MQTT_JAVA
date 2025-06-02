@@ -6,8 +6,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Profile;
 
 @SpringBootApplication
+@Profile("!test") // 確保在測試環境中不啟動此應用程式
 public class MqttdemoApplication implements CommandLineRunner{
 
     private static final String BROKER = "mqtt.onusflux.com";
